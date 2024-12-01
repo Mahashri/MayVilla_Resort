@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="navstyle1.css">
+    <script src="navsticky.js" defer></script>
+
+
+
+   <!-- <nav id="navigation1" class="navigation">
+        <div class="nav-header">
+            <a class="nav-brand mr-4" href="index.html"><img src="images/logo.png" alt="May Villa" height="94"></a>
+            <div class="nav-toggle"></div>
+        </div>
+        <div class="nav-menus-wrapper">
+            <ul class="nav-menu align-to-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="rooms.html">Rooms and Tariff</a></li>
+                <!--    <li><a href="facilities/index.html">Facilities</a></li>
+      <li><a href="virtual-tour/index.html">Virtual Tour</a></li>   
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <style>
+        #navigation1 {
+            background-color: #ADD8E6;
+            /* Light blue */
+            padding: 10px 0;
+            /* Optional padding for better appearance */
+        }
+        /* Optional: Change text and hover colors for better contrast */
+        
+        #navigation1 .nav-menu a {
+            color: #000;
+            /* Text color */
+            text-decoration: none;
+        }
+        
+        #navigation1 .nav-menu a:hover {
+            color: #fff;
+            /* Text color on hover */
+        }
+    </style>-->
+  <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-top: 50px;
+            font-size: 36px;
+            font-weight: bold;
+            padding-bottom: 30px;
+        }
+
+        /* Rooms Section */
+        .rooms-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .room-item {
+            margin-bottom: 40px; /* Space between each room */
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .room-item-inner {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .room-item img {
+            width: 300px; /* Ensure the image spans the width of the container */
+            height: 300px; /* Set a fixed height for portrait orientation */
+            object-fit: cover; /* Ensures the image fills the space without distortion */
+            border-bottom: 2px solid #eee;
+            border-radius: 10px 10px 0 0; /* Matches card's rounded corners */
+        }
+
+        .ri-text {
+            padding: 20px;
+        }
+
+        .ri-text h3 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .ri-text .table {
+            margin: 10px 0;
+            width: 100%;
+        }
+
+        .ri-text .table td {
+            padding: 8px;
+        }
+
+        .ri-text .table .r-o {
+            font-weight: 600;
+        }
+
+        .primary-btn {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 12px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .primary-btn:hover {
+            background-color: #005bb5;
+			color:white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .room-item-inner {
+                flex-direction: column;
+            }
+
+            .room-item img {
+                height: 200px;
+            }
+
+            .ri-text {
+                padding: 15px;
+            }
+
+            .primary-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+
+
+
+
+
+    <title>Hotel Rooms</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- Google Fonts (optional, but recommended) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body>
+
+    <nav class="nav-bar" id="navbar">
+        <div class="brand-logo">
+          <img src="./roomimages/logo1.jpg" alt="Brand Logo">
+        </div>
+        <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+        <div class="menu-wrapper">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="rooms.html">Rooms and Tariffs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+
+
+    <!-- Offcanvas Menu Section Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="canvas-open">
+        <i class="icon_menu"></i>
+    </div>
+
+
+    <!-- Modal for Enquiry Form -->
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="text-align: center;">
+                    <h5 class="modal-title" id="exampleModalLabel">Enquiry</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col-xl-12 col-lg-12">
+                        <div class="booking-form">
+                            <form action="#" id="enquiryForm">
+                                <div class="check-date">
+                                    <label for="name">Name:</label>
+                                    <input type="text" name="fullname" id="name" required>
+                                </div>
+                                <div class="check-date">
+                                    <label for="phone">Phone Number:</label>
+                                    <input type="text" name="phone" id="phone" required>
+                                </div>
+                                <div class="check-date">
+                                    <label for="date-in">Check In:</label>
+                                    <input type="date" class="date-input" id="date-in" required>
+                                </div>
+                                <div class="check-date">
+                                    <label for="date-out">Check Out:</label>
+                                    <input type="date" class="date-input" id="date-out" required>
+                                </div>
+                                <div class="select-option">
+                                    <label for="guest">Guests:</label>
+                                    <select id="guest" required>
+                                        <option value="2">2 Adults</option>
+                                        <option value="3">3 Adults</option>
+                                    </select>
+                                </div>
+                                <div class="select-option">
+                                    <label for="room">Room:</label>
+                                    <select id="room" required>
+                                        <option value="1">1 Room</option>
+                                        <option value="2">2 Rooms</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="primary-btn">Check Availability</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<br>
+	
+<div>
+
+
+
+
+
+  <h2>Rooms and Tariff</h2>
+
+    <!-- Rooms Section Begin -->
+<!-- Rooms Section Begin -->
+<section class="rooms-section spad">
+    <div class="container">
+        <div class="row">
+
+            <!-- Blue Room -->
+            <div class="room-item col-lg-12">
+                <h3 class="text-center" style="color: blue;">
+                    <a href="blueroom.html" style="color: blue; text-decoration: none;">Blue Room</a>
+                  </h3>
+                <div class="row">
+                    <!-- Left Column: Image -->
+                    <div class="col-lg-8 col-md-6">
+                        <img src="roomimages/blue-room/Blue room Home.jpg" alt="Interior of Blue Room with King Size Bed" class="img-fluid">
+                    </div>
+                    <!-- Right Column: Price Details & Button -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ri-text">
+                            <h3>3000 INR <span>/Pernight</span></h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>550 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max Person 3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>King Size</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Balcony:</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="blueroom.html" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Orange Room -->
+            <div class="room-item col-lg-12">
+                <h3 class="text-center" style="color: rgb(255, 115, 0);">
+                    <a href="orangeroom.html" style="color: rgb(255, 115, 0); text-decoration: none;">Orange Room</a>
+                  </h3>
+                <div class="row">
+                    <!-- Left Column: Image -->
+                    <div class="col-lg-8 col-md-6">
+                        <img src="./roomimages/orange-room/Orange Room Home.jpg" alt="Interior of Orange Room with King Size Bed" class="img-fluid">
+                    </div>
+                    <!-- Right Column: Price Details & Button -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ri-text">
+                            <h3>5500 INR <span>/Pernight</span></h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>700 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max Person 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>King Size</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Balcony:</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="orangeroom.html" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grey Room -->
+            <div class="room-item col-lg-12">
+                <h3 class="text-center" style="color: Grey;">
+                    <a href="greyroom.html" style="color: Grey; text-decoration: none;">Grey Room</a>
+                </h3>
+                <div class="row">
+                    <!-- Left Column: Image -->
+                    <div class="col-lg-8 col-md-6">
+                        <img src="./roomimages/grey-room/Grey Room Home.jpg" alt="Interior of Grey Room with King, Queen & Sofa Bed" class="img-fluid">
+                    </div>
+                    <!-- Right Column: Price Details & Button -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ri-text">
+                            <h3>4000 INR <span>/Pernight</span></h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>600 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max Person 5</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>King, Queen & Sofa Bed</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Balcony:</td>
+                                        <td>No</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="greyroom.html" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pink Room -->
+            <div class="room-item col-lg-12">
+                <h3 class="text-center" style="color:rgb(242, 38, 116);">
+                    <a href="pinkroom.html" style="color: rgb(242, 38, 116); text-decoration: none;">Pink Room</a>
+                  </h3>
+                <div class="row">
+                    <!-- Left Column: Image -->
+                    <div class="col-lg-8 col-md-6">
+                        <img src="./roomimages/pink-room/Pink Room Home.jpg" alt="Interior of Pink Room with King Size Bed" class="img-fluid">
+                    </div>
+                    <!-- Right Column: Price Details & Button -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ri-text">
+                            <h3>2500 INR <span>/Pernight</span></h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>300 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max Person 3</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>King Size</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Balcony:</td>
+                                        <td>No</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="pinkroom.html" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Red Room -->
+            <div class="room-item col-lg-12">
+                <h3 class="text-center" style="color:red;">
+                    <a href="redroom.html" style="color: red; text-decoration: none;">Red Room</a>
+                  </h3>
+                <div class="row">
+                    <!-- Left Column: Image -->
+                    <div class="col-lg-8 col-md-6">
+                        <img src="roomimages/red-room/Red Room Home.jpg" alt="Interior of Red Room with King Size Bed" class="img-fluid">
+                    </div>
+                    <!-- Right Column: Price Details & Button -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ri-text">
+                            <h3>3000 INR <span>/Pernight</span></h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>500 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max Person 4</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>King Size</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Balcony:</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="redroom.html" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Green Room -->
+            <div class="room-item col-lg-12">
+                <h3 class="text-center" style="color:darkgreen">
+                    <a href="greenroom.html" style="color: darkgreen; text-decoration: none;">Green Room</a>
+                  </h3>
+                <div class="row">
+                    <!-- Left Column: Image -->
+                    <div class="col-lg-8 col-md-6">
+                        <img src="roomimages/green-room/Green Room Home.jpg" alt="Interior of Green Room with King Size Bed" class="img-fluid">
+                    </div>
+                    <!-- Right Column: Price Details & Button -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ri-text">
+                            <h3>2500 INR <span>/Pernight</span></h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>650 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max Person 4</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>King Size</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Balcony:</td>
+                                        <td>No</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="greenroom.html" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Yellow & Brown Room -->
+            <div class="room-item col-lg-12">
+                <h3 class="text-center">
+                    <a href="yellowroom.html" style="color:brown;text-decoration:none;">Yellow & Brown Room</a>
+                  </h3>
+                <div class="row">
+                    <!-- Left Column: Image -->
+                    <div class="col-lg-8 col-md-6">
+                        <img src="roomimages/yellow-room/Yellow Room Home.jpg" alt="Interior of Yellow & Brown Room" class="img-fluid">
+                    </div>
+                    <!-- Right Column: Price Details & Button -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ri-text">
+                            <h3>4500 INR <span>/Pernight</span></h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>800 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max Person 6</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Bed:</td>
+                                        <td>King Size</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Balcony:</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="yellowroom.html" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6 Bedroom Cottage -->
+            <div class="room-item col-lg-12">
+                <h3 class="text-center" style="color:rgb(129, 51, 129)">
+                    <a href="6_bedroom_cottage.html" style="color: rgb(129, 51, 129); text-decoration: none;">6 Bedroom Cottage</a>
+                  </h3>
+                <div class="row">
+                    <!-- Left Column: Image -->
+                    <div class="col-lg-8 col-md-6">
+                        <img src="./roomimages/6_bedroom_cottage.jpg" alt="6 Bedroom Cottage" class="img-fluid">
+                    </div>
+                    <!-- Right Column: Price Details & Button -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ri-text">
+                            <h3>18000 INR <span>/Pernight</span></h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>2500 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max Person 12</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Beds:</td>
+                                        <td>King Size</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Balcony:</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="6_bedroom_cottage.html" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9 Bedroom Cottage -->
+            <div class="room-item col-lg-12">
+                <h3 class="text-center" style="color:rgb(165, 143, 18)">
+                    <a href="9_bedroom_cottage.html" style="color:rgb(165, 143, 18); text-decoration: none;">9 Bedroom Cottage</a>
+                  </h3>
+                <div class="row">
+                    <!-- Left Column: Image -->
+                    <div class="col-lg-8 col-md-6">
+                        <img src="./roomimages/9_bedroom_cottage.jpg" alt="9 Bedroom Cottage" class="img-fluid">
+                    </div>
+                    <!-- Right Column: Price Details & Button -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="ri-text">
+                            <h3>27000 INR <span>/Pernight</span></h3>
+                            <table class="table table-borderless">
+                                <tbody>
+                                    <tr>
+                                        <td class="r-o">Size:</td>
+                                        <td>3000 ft</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Capacity:</td>
+                                        <td>Max Person 18</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Beds:</td>
+                                        <td>King Size</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="r-o">Balcony:</td>
+                                        <td>Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="9_bedroom_cottage.html" class="primary-btn">More Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Rooms Section End -->
+
+<!-- Rooms Section End -->
+
+    <!-- Rooms Section End -->
+
+    <!-- Bootstrap JS & jQuery & Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS for Form Validation -->
+    <script>
+        $('#enquiryForm').submit(function(event) {
+            event.preventDefault();
+            if ($('#name').val() && $('#phone').val() && $('#date-in').val() && $('#date-out').val()) {
+                alert('Form submitted successfully!');
+            } else {
+                alert('Please fill all the required fields.');
+            }
+        });
+    </script>
+	
+	<script type="text/javascript">
+$(document).ready(function(){$("#navigation1").navigation({hidden: true});});
+
+$(".btn-show").click(function(){ 
+		$("#navigation1").data("navigation").toggleOffcanvas();
+});
+
+function toggleMenu() {
+  const navbar = document.getElementById('navbar');
+  navbar.classList.toggle('menu-active');
+}
+
+</script>
+</body>
+
+</html>
+
+

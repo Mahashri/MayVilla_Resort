@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New May Villa</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="navstyle1.css">
+  <script src="navsticky.js" defer></script>
+  
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    .hero-section {
+      background-image: url('./images/banner/about-banner.jpg');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+    }
+    .hero-section h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .hero-section p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .about-section img {
+      border: 5px solid #007bff;
+      border-radius: 10px;
+    }
+    .services-section i {
+      color: #007bff;
+    }
+    .contact-info i {
+      color: #007bff;
+      margin-right: 10px;
+    }
+    .footer {
+      background-color: #343a40;
+      color: white;
+    }
+    .services-section .icon {
+      font-size: 3rem;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav-bar" id="navbar">
+    <div class="brand-logo">
+      <img src="./roomimages/logo1.jpg" alt="Brand Logo">
+    </div>
+    <button class="menu-toggle" onclick="toggleMenu()">Menu</button>
+    <div class="menu-wrapper">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="rooms.html">Rooms and Tariffs</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero-section">
+    <div class="container text-center">
+      <h1>New May Villa</h1>
+      <p>Your Eco-Friendly Retreat in Kodaikanal</p>
+      <a href="#about" class="btn btn-primary btn-lg">Explore More</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="about-section py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="./images/gallery/2.jpg" alt="New May Villa" class="img-fluid rounded">
+          </div>
+          <div class="col-lg-6">
+            <h2>About Us</h2>
+            <p>New May Villa is a haven for those seeking to reconnect with nature without compromising comfort. Nestled in the lush greenery of Kodaikanal, our eco-conscious retreat combines luxury with sustainability.</p>
+            <ul>
+              <li>Luxurious rooms with nature views</li>
+              <li>Eco-friendly practices at heart</li>
+              <li>Highly rated for hospitality</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="services-section text-center py-5">
+      <div class="container">
+        <h2>What We Offer</h2>
+		<br>
+        <div class="row">
+          <div class="col-md-4">
+            <i class="fas fa-wifi icon"></i>
+            <h4>Free Wi-Fi</h4>
+            <p>Enjoy high-speed internet to stay connected during your stay.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-utensils icon"></i>
+            <h4>Free Breakfast</h4>
+            <p>Start your day with a complimentary breakfast, prepared with love.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-parking icon"></i>
+            <h4>Free Parking</h4>
+            <p>Ample parking space for guests bringing their own vehicles.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-wheelchair icon"></i>
+            <h4>Accessible</h4>
+            <p>Our retreat is designed to be accessible for all guests.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-swimmer icon"></i>
+            <h4>Pool</h4>
+            <p>Relax and refresh in our serene swimming pool.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-snowflake icon"></i>
+            <h4>Air-conditioned</h4>
+            <p>Rooms with modern air-conditioning for your comfort.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-tshirt icon"></i>
+            <h4>Laundry Service</h4>
+            <p>Convenient laundry service for guests staying longer.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-business-time icon"></i>
+            <h4>Business Centre</h4>
+            <p>We provide a quiet and comfortable space for business needs.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-dog icon"></i>
+            <h4>Pet-friendly</h4>
+            <p>Bring your furry friends along for a family getaway.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-concierge-bell icon"></i>
+            <h4>Room Service</h4>
+            <p>Room service available for your comfort and convenience.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-child icon"></i>
+            <h4>Child Friendly</h4>
+            <p>We offer amenities designed to be family-friendly.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-blender icon"></i>
+            <h4>Kitchen in Some Rooms</h4>
+            <p>Some rooms come with a fully equipped kitchen for your convenience.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-plane-departure icon"></i>
+            <h4>Airport Shuttle</h4>
+            <p>Easy access to and from the nearest airports with our shuttle service.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-dumbbell icon"></i>
+            <h4>Fitness Centre</h4>
+            <p>Stay fit with access to our fully equipped fitness centre.</p>
+          </div>
+          <div class="col-md-4">
+            <i class="fas fa-golf-ball icon"></i>
+            <h4>Golf Course</h4>
+            <p>Enjoy a day of golfing at nearby world-class golf courses.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section py-5">
+      <div class="container text-center">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you! Reach out for bookings or inquiries.</p>
+        <ul class="contact-info list-unstyled">
+          <li><i class="fas fa-phone-alt"></i> +91 98942 / +91 94872</li>
+          <li><i class="fas fa-envelope"></i> info@NewMayVilla.com</li>
+          <li><i class="fas fa-map-marker-alt"></i> May Villa, Observatory Road, Kodaikanal</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+<script type="text/javascript">
+$(document).ready(function(){$("#navigation1").navigation({hidden: true});});
+
+$(".btn-show").click(function(){ 
+		$("#navigation1").data("navigation").toggleOffcanvas();
+});
+
+function toggleMenu() {
+  const navbar = document.getElementById('navbar');
+  navbar.classList.toggle('menu-active');
+}
+
+</script>
+  <footer class="footer py-3">
+    <div class="container text-center">
+      <p>© 2024 New May Villa | All Rights Reserved</p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
